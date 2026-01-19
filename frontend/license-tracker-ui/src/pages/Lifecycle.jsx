@@ -1,4 +1,3 @@
-// src/pages/Lifecycle.jsx
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import api from "../api/axiosConfig";
@@ -35,7 +34,6 @@ export default function Lifecycle() {
     lifecycleStage: "ACTIVE",
   });
 
-  // ================= LOAD =================
   useEffect(() => {
     loadData();
   }, []);
@@ -45,7 +43,6 @@ export default function Lifecycle() {
     setRows(res.data || []);
   };
 
-  // ================= EDIT =================
   const startEdit = (row) => {
     setEditRowId(row.svId);
     setEditData({ ...row });
@@ -62,14 +59,12 @@ export default function Lifecycle() {
     loadData();
   };
 
-  // ================= DELETE =================
   const deleteRow = async (svId) => {
     if (!window.confirm("Delete this software record?")) return;
     await api.delete(`/api/software/${svId}`);
     loadData();
   };
 
-  // ================= ADD =================
   const addRow = async () => {
     await api.post("/api/software", newRow);
     setShowAdd(false);
