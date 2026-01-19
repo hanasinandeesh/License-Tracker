@@ -43,8 +43,6 @@ public class Device {
     @Column(name = "decommission_reason")
     private String decommissionReason;
 
-    //  Getters & Setters 
-
     public String getDeviceId() {
         return deviceId;
     }
