@@ -73,7 +73,6 @@ public class AuditLogServiceImpl implements AuditLogService {
 
     @Override
     public void createLog(
-//    		Integer userId,
             String entityType,
             String entityId,
             String action,
@@ -89,7 +88,6 @@ public class AuditLogServiceImpl implements AuditLogService {
             throw new RuntimeException("Logged-in user not found in SecurityContext");
         }
 
-//        log.setUserId(userId);
         log.setUserId(currentUserId);
         log.setEntityType(entityType);
         log.setEntityId(entityId);
