@@ -1,0 +1,16 @@
+# Environment / secrets
+.env
+application-local.properties
+
+# IDE files
+.metadata/
+.sonarlint/
+.idea/
+.vscode/
+
+# Build
+target/
+node_modules/
+
+# Logs
+*.log

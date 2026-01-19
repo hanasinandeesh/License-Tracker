@@ -1,0 +1,174 @@
+/* ===============================
+   PAGE LAYOUT
+================================ */
+.alerts-page {
+  padding: 28px;
+  background: #f8fafc;
+  min-height: calc(100vh - 60px);
+}
+
+/* ===============================
+   HEADER
+================================ */
+.alerts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ===============================
+   TABS
+================================ */
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tabs button {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.tabs button:hover {
+  background: #f1f5f9;
+}
+
+.tabs .active {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
+}
+
+/* ===============================
+   REMINDER BOX
+================================ */
+.reminder-box {
+  display: flex;
+  gap: 10px;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.reminder-box select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  min-width: 220px;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.reminder-box select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* ===============================
+   REMINDER BUTTON
+================================ */
+.reminder-box button {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.reminder-box button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(22, 163, 74, 0.3);
+}
+
+.reminder-box button:disabled {
+  background: #9ca3af;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   ALERT MESSAGE
+================================ */
+.alert-msg {
+  margin: 16px 0;
+  padding: 14px 16px;
+  background: #ecfeff;
+  border-left: 5px solid #06b6d4;
+  border-radius: 8px;
+  color: #0f172a;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* ===============================
+   TABLE
+================================ */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+table th {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+
+table td {
+  padding: 12px;
+  font-size: 14px;
+  color: #334155;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+table tbody tr:hover {
+  background: #f1f5f9;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .alerts-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .reminder-box {
+    flex-direction: column;
+  }
+
+  .reminder-box select,
+  .reminder-box button {
+    width: 100%;
+  }
+}

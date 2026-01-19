@@ -1,0 +1,177 @@
+/* ===============================
+   PAGE CONTAINER
+================================ */
+.devices-container {
+  padding: 28px;
+  background: #f8fafc;
+  min-height: calc(100vh - 60px);
+}
+
+.devices-container h2 {
+  margin-bottom: 18px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* ===============================
+   FORM CARD
+================================ */
+.device-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  margin-bottom: 24px;
+}
+
+.device-form input,
+.device-form select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  min-width: 180px;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.device-form input:focus,
+.device-form select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.device-form input:disabled {
+  background: #f1f5f9;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   FORM BUTTONS
+================================ */
+.device-form button {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.device-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+}
+
+.cancel-btn {
+  background: #64748b;
+}
+
+/* ===============================
+   TABLE
+================================ */
+.device-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.device-table th {
+  background: #0f172a;
+  color: #f8fafc;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px;
+}
+
+.device-table td {
+  padding: 12px;
+  font-size: 14px;
+  color: #334155;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.device-table tr:last-child td {
+  border-bottom: none;
+}
+
+.device-table tbody tr:hover {
+  background: #f1f5f9;
+}
+
+/* ===============================
+   STATUS STYLES
+================================ */
+.status.active {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.status.obsolete {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.status.maintenance {
+  color: #ca8a04;
+  font-weight: 600;
+}
+
+.status.decommissioned {
+  color: #475569;
+  font-weight: 600;
+}
+
+/* ===============================
+   ACTION BUTTONS
+================================ */
+.device-table button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.device-table button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.danger {
+  background: #ef4444 !important;
+  margin-left: 6px;
+}
+
+.danger:hover {
+  background: #dc2626 !important;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .device-form {
+    flex-direction: column;
+  }
+
+  .device-form input,
+  .device-form select {
+    width: 100%;
+  }
+}

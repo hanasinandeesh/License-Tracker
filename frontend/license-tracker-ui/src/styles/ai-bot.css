@@ -1,0 +1,146 @@
+/* ===== PAGE ===== */
+.ai-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+  border-radius: 16px;
+  box-shadow: 0 0 40px rgba(79, 172, 254, 0.35);
+  animation: glowPulse 4s infinite alternate;
+}
+
+/* ===== TITLE ===== */
+.ai-title {
+  font-size: 26px;
+  color: #e0f7fa;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.ai-subtitle {
+  display: block;
+  font-size: 13px;
+  color: #9fd3ff;
+  margin-top: 6px;
+}
+
+/* ===== ROLE ===== */
+.ai-role {
+  text-align: center;
+  font-size: 13px;
+  color: #b0e0ff;
+  margin-bottom: 25px;
+}
+
+/* ===== INPUT BOX ===== */
+.ai-input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ai-input-box textarea {
+  min-height: 110px;
+  padding: 14px;
+  font-size: 14px;
+  color: #e0f7fa;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(79, 172, 254, 0.6);
+  border-radius: 10px;
+  outline: none;
+  resize: vertical;
+}
+
+.ai-input-box textarea::placeholder {
+  color: #9fc9e8;
+}
+
+.ai-input-box textarea:focus {
+  box-shadow: 0 0 15px rgba(79, 172, 254, 0.8);
+}
+
+/* ===== BUTTON ===== */
+.ai-input-box button {
+  align-self: flex-end;
+  padding: 10px 24px;
+  border-radius: 30px;
+  border: none;
+  font-weight: bold;
+  color: #0f2027;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ai-input-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px #4facfe;
+}
+
+.ai-input-box button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== SUGGESTIONS ===== */
+.ai-suggestions {
+  margin-top: 30px;
+}
+
+.ai-suggestions p {
+  color: #cce7ff;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* ===== CHIPS ===== */
+.chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.chip {
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 13px;
+  color: #4facfe;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(79, 172, 254, 0.6);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.chip:hover {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #0f2027;
+  box-shadow: 0 0 12px #4facfe;
+  transform: scale(1.05);
+}
+
+/* ===== RESPONSE ===== */
+.ai-response {
+  margin-top: 30px;
+  padding: 18px;
+  border-radius: 12px;
+  background: radial-gradient(circle at top left, #0f2027, #000);
+  border-left: 4px solid #00f2fe;
+  box-shadow: inset 0 0 20px rgba(0, 242, 254, 0.25);
+}
+
+.ai-response pre {
+  white-space: pre-wrap;
+  color: #00f2fe;
+  font-family: "Courier New", monospace;
+  font-size: 13.5px;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 20px rgba(79, 172, 254, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 45px rgba(0, 242, 254, 0.6);
+  }
+}

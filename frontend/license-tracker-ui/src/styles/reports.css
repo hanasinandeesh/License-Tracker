@@ -1,0 +1,159 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+.reports-page {
+  padding: 24px 32px;
+  background-color: #f4f6f9;
+  min-height: 100vh;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+ 
+.reports-page h2 {
+  margin-bottom: 24px;
+  color: #1f2937;
+  font-size: 24px;
+  font-weight: 600;
+}
+ 
+/* =========================
+   REPORT CARDS
+========================= */
+.report-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ 
+.report-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #111827;
+  font-weight: 500;
+}
+ 
+/* =========================
+   BUTTON GROUP
+========================= */
+.btn-group {
+  display: flex;
+  gap: 12px;
+}
+ 
+.btn-group button {
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+ 
+/* View Button */
+.btn-group button:first-child {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+ 
+.btn-group button:first-child:hover {
+  background-color: #d1d5db;
+}
+ 
+/* Download Button */
+.btn-group button:last-child {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+ 
+.btn-group button:last-child:hover {
+  background-color: #1e40af;
+}
+ 
+/* =========================
+   PREVIEW SECTION
+========================= */
+.preview-section {
+  margin-top: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+ 
+.preview-section h3 {
+  margin-bottom: 16px;
+  font-size: 20px;
+  color: #111827;
+  font-weight: 600;
+}
+ 
+/* =========================
+   TABLE STYLING
+========================= */
+.preview-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+ 
+.preview-section th {
+  background-color: #f3f4f6;
+  color: #111827;
+  font-weight: 600;
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+ 
+.preview-section td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+ 
+.preview-section tbody tr:hover {
+  background-color: #f9fafb;
+}
+ 
+/* =========================
+   CLOSE BUTTON
+========================= */
+.preview-section button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: #ef4444;
+  color: #ffffff;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+ 
+.preview-section button:hover {
+  background-color: #dc2626;
+}
+ 
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .report-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+ 
+  .btn-group {
+    width: 100%;
+  }
+ 
+  .btn-group button {
+    width: 100%;
+  }
+}
