@@ -22,14 +22,12 @@ export default function Dashboard() {
 
   const loadDashboard = async () => {
     try {
-      // ✅ ALWAYS ALLOWED (ALL ROLES)
       const expiringRes = await api.get("/api/licenses/expiring?days=30");
       const licensesRes = await api.get("/api/licenses");
 
       let devicesCount = 0;
       let riskCount = 0;
 
-      // ✅ ONLY ADMIN CAN SEE DEVICE DATA
       if (role === "ADMIN") {
         const devicesRes = await api.get("/api/devices");
         const riskRes = await api.get("/api/devices/non-compliant");
