@@ -2,7 +2,6 @@ package com.prodapt.license_tracker.report.dto;
 
 import java.time.LocalDate;
 
-//package: com.prodapt.license_tracker.report.dto
 public class LicenseReportDTO {
 
 	private String licenseKey;
