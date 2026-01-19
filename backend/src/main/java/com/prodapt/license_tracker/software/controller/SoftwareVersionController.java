@@ -24,36 +24,30 @@ public class SoftwareVersionController {
 		this.softwareVersionRepository = softwareVersionRepository;
 	}
 
-	// 🔹 GET ALL (UI should call this)
 	@GetMapping
 	@PreAuthorize("hasAnyRole('ADMIN','ENGINEER','AUDITOR')")
 	public List<SoftwareLifecycleDTO> getAllSoftware() {
 	    return softwareVersionRepository.fetchAllLifecycle();
 	}
 
-
-	// 🔍 VIEW lifecycle (ALL ROLES)
 	@PreAuthorize("hasAnyRole('ADMIN','ENGINEER','AUDITOR')")
 	@GetMapping("/device/{deviceId}")
 	public List<SoftwareLifecycleDTO> getDeviceSoftware(@PathVariable String deviceId) {
 		return softwareVersionService.getLifecycleByDevice(deviceId);
 	}
 
-	// ➕ ADD software (ADMIN, ENGINEER)
 	@PreAuthorize("hasAnyRole('ADMIN','ENGINEER')")
 	@PostMapping
 	public SoftwareVersion addSoftware(@RequestBody SoftwareVersion software) {
 		return softwareVersionService.addSoftware(software);
 	}
 
-	// ✏ UPDATE software (ADMIN, ENGINEER)
 	@PreAuthorize("hasAnyRole('ADMIN','ENGINEER')")
 	@PutMapping("/{svId}")
 	public SoftwareVersion updateSoftware(@PathVariable Integer svId, @RequestBody SoftwareVersion software) {
 		return softwareVersionService.updateSoftware(svId, software);
 	}
 
-	// ❌ DELETE software (ADMIN ONLY)
 	@PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("/{svId}")
 	public void deleteSoftware(@PathVariable Integer svId) {
