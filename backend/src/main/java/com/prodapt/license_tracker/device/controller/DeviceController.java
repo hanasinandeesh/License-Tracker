@@ -23,10 +23,6 @@ public class DeviceController {
         this.deviceService = deviceService;
     }
 
-    // =========================
-    // DEVICE CRUD (UNCHANGED)
-    // =========================
-
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<Device> addDevice(@RequestBody Device device) {
@@ -81,14 +77,6 @@ public class DeviceController {
         return ResponseEntity.noContent().build();
     }
 
-    // =========================
-    // DEVICE LIFECYCLE (SAFE)
-    // =========================
-
-    /**
-     * Lifecycle view (READ-ONLY)
-     * ADMIN, ENGINEER, AUDITOR
-     */
     @PreAuthorize("hasAnyRole('ADMIN','ENGINEER','AUDITOR')")
     @GetMapping("/{deviceId}/lifecycle")
     public ResponseEntity<List<DeviceLifecycleView>> viewLifecycle(
