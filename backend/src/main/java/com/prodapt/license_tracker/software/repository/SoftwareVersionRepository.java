@@ -11,7 +11,6 @@ import com.prodapt.license_tracker.software.entity.SoftwareVersion;
 public interface SoftwareVersionRepository
 extends JpaRepository<SoftwareVersion, Integer> {
 
-// ✅ FIXED: single correct method, LEFT JOIN
 	@Query("""
 		    SELECT new com.prodapt.license_tracker.software.dto.SoftwareLifecycleDTO(
 		        sv.svId,
@@ -27,7 +26,6 @@ extends JpaRepository<SoftwareVersion, Integer> {
 		""")
 		List<SoftwareLifecycleDTO> fetchAllLifecycle();
 
-// ✅ Needed for device-specific lifecycle
 	@Query("""
 		    SELECT new com.prodapt.license_tracker.software.dto.SoftwareLifecycleDTO(
 		        sv.svId,
