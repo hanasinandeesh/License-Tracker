@@ -9,16 +9,12 @@ export default function Reports() {
   const role = localStorage.getItem("role");
   const [preview, setPreview] = useState(null);
 
-  // =========================
-  // FETCH CSV (CLEAN VERSION)
-  // =========================
   const fetchCsv = async (endpoint) => {
     const res = await api.get(endpoint, {
       responseType: "text",
       validateStatus: () => true,
     });
 
-    // ✅ Only validate using HTTP status
     if (res.status !== 200) {
       throw new Error("Invalid CSV response");
     }
@@ -36,9 +32,6 @@ export default function Reports() {
     return { headers, rows };
   };
 
-  // =========================
-  // VIEW REPORT
-  // =========================
   const viewReport = async (endpoint, title) => {
     try {
       const data = await fetchCsv(endpoint);
@@ -49,9 +42,6 @@ export default function Reports() {
     }
   };
 
-  // =========================
-  // DOWNLOAD PDF
-  // =========================
   const downloadPdf = async (endpoint, title) => {
     try {
       const { headers, rows } = await fetchCsv(endpoint);
