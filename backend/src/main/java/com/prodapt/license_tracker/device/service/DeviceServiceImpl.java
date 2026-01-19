@@ -47,7 +47,6 @@ public class DeviceServiceImpl implements DeviceService {
 		Device saved = deviceRepository.save(device);
 
 		auditLogService.createLog(
-//				null, 
 				"DEVICE", 
 				saved.getDeviceId(),
 				"CREATE", 
@@ -82,7 +81,6 @@ public class DeviceServiceImpl implements DeviceService {
 		Device saved = deviceRepository.save(existingDevice);
 
 		auditLogService.createLog(
-//				null,
 				"DEVICE",
 				deviceId, 
 				"UPDATE", 
@@ -131,7 +129,6 @@ public class DeviceServiceImpl implements DeviceService {
 		deviceRepository.save(device);
 
 		auditLogService.createLog(
-//				null,
 				"DEVICE",
 				deviceId, 
 				"DECOMMISSION",
@@ -149,7 +146,6 @@ public class DeviceServiceImpl implements DeviceService {
 		deviceRepository.deleteById(deviceId);
 		
 	    auditLogService.createLog(
-//	             null,
 	            "DEVICE",
 	            deviceId,
 	            "DELETE",
