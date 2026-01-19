@@ -47,7 +47,6 @@ public class LicenseServiceImpl implements LicenseService {
             throw new RuntimeException("License already exists");
         }
 
-        // ✅ SAFE vendor handling
         if (license.getVendor() == null || license.getVendor().getVendorId() == null) {
             throw new RuntimeException("Vendor is required");
         }
@@ -63,7 +62,6 @@ public class LicenseServiceImpl implements LicenseService {
         License saved = licenseRepository.save(license);
 
         auditLogService.createLog(
-//                null,
                 "LICENSE",
                 saved.getLicenseKey(),
                 "CREATE",
@@ -139,7 +137,6 @@ public class LicenseServiceImpl implements LicenseService {
         licenseRepository.deleteById(licenseKey);
 
         auditLogService.createLog(
-//                null,
                 "LICENSE",
                 licenseKey,
                 "DELETE",
@@ -166,9 +163,7 @@ public class LicenseServiceImpl implements LicenseService {
         
         License updated = licenseRepository.save(existing);
 
-        // 🔥 THIS WAS MISSING AT RUNTIME
         auditLogService.createLog(
-//                null,
                 "LICENSE",
                 updated.getLicenseKey(),
                 "UPDATE",
