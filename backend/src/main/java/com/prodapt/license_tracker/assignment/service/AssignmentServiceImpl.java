@@ -57,23 +57,15 @@ public class AssignmentServiceImpl implements AssignmentService {
         if (license.getMaxUsage() != null && usage >= license.getMaxUsage()) {
             throw new AssignmentLimitExceededException("Max usage exceeded");
         }
-
-//        Assignment a = new Assignment();
-//        a.setDeviceId(deviceId);
-//        a.setLicenseKey(licenseKey);
-//        a.setAssignedOn(LocalDate.now());
         
         Assignment assignment = new Assignment();
         assignment.setDeviceId(deviceId);
         assignment.setLicenseKey(licenseKey);
         assignment.setAssignedOn(LocalDate.now());
 
-        Assignment saved = assignmentRepository.save(assignment); // ✅
+        Assignment saved = assignmentRepository.save(assignment);
 
-
-        // ✅ AUDIT LOG
         auditLogService.createLog(
-//                null,
                 "ASSIGNMENT",
                 saved.getAssignmentId().toString(),
                 "CREATE",
@@ -90,15 +82,12 @@ public class AssignmentServiceImpl implements AssignmentService {
 
     @Override
     public void revoke(Integer assignmentId) {
-//        assignmentRepository.deleteById(assignmentId);
         if (!assignmentRepository.existsById(assignmentId)) {
             throw new RuntimeException("Assignment not found");
         }
         assignmentRepository.deleteById(assignmentId);
         
-        // ✅ AUDIT LOG
         auditLogService.createLog(
-//                null,
                 "ASSIGNMENT",
                 assignmentId.toString(),
                 "DELETE",
