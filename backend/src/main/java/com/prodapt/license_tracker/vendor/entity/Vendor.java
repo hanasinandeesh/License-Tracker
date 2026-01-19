@@ -17,7 +17,6 @@ public class Vendor {
     @Column(name = "support_email")
     private String supportEmail;
 
-    // getters & setters
     public Integer getVendorId() {
         return vendorId;
     }
