@@ -7,7 +7,6 @@ public class SoftwareVersionRequest {
     private String currentVersion;
     private String latestVersion;
 
-    // getters & setters
     public String getDeviceId() {
         return deviceId;
     }
