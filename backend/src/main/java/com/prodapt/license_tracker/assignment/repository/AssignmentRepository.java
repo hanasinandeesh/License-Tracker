@@ -27,19 +27,6 @@ public interface AssignmentRepository extends JpaRepository<Assignment, Integer>
 
 	void deleteByDeviceId(String deviceId);
 
-	// ✅ SINGLE VIEW METHOD (used by UI + reports)
-//	@Query("""
-//			    SELECT new com.prodapt.license_tracker.assignment.dto.AssignmentViewDTO(
-//			        a.assignmentId,
-//			        a.deviceId,
-//			        l.licenseKey,
-//			        l.softwareName,
-//			        a.assignedOn
-//			    )
-//			    FROM Assignment a
-//			    JOIN License l ON a.licenseKey = l.licenseKey
-//			""")
-//	List<AssignmentViewDTO> fetchAssignmentView();
 	@Query("""
 			    SELECT new com.prodapt.license_tracker.assignment.dto.AssignmentViewDTO(
 			        a.assignmentId,
@@ -53,7 +40,6 @@ public interface AssignmentRepository extends JpaRepository<Assignment, Integer>
 			""")
 	List<AssignmentViewDTO> fetchAssignmentView();
 
-	// 🔔 Used by Alerts module (KEEP)
 	@Query("""
 			    SELECT a
 			    FROM Assignment a
