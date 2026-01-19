@@ -17,7 +17,7 @@ export default function Licenses() {
     validFrom: "",
     validTo: "",
     maxUsage: "",
-    vendor: { vendorId: 1 } // ✅ REQUIRED BY BACKEND
+    vendor: { vendorId: 1 } 
   });
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function Licenses() {
       validFrom: "",
       validTo: "",
       maxUsage: "",
-      vendor: { vendorId: 1 } // ✅ MUST EXIST IN DB
+      vendor: { vendorId: 1 } 
     });
     setShowForm(true);
   };
