@@ -19,7 +19,6 @@ public interface AuditLogService {
     );
     
     void createLog(
-//            Integer userId,
             String entityType,
             String entityId,
             String action,
