@@ -32,7 +32,6 @@ export default function Devices() {
     if (editingId) {
       const { deviceId, ...updatePayload } = form; // 
       await api.put(`/api/devices/${editingId}`, updatePayload);
-      // await api.put(`/api/devices/${editingId}`, form);
     } else {
       await api.post("/api/devices", form);
     }
