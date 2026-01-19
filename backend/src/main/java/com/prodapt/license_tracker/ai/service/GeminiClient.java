@@ -22,7 +22,6 @@ public class GeminiClient {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    // 🔹 ONLY responsibility: Call Gemini
     public String ask(String prompt) {
 
         String url = baseUrl + "/" + model + ":generateContent?key=" + apiKey;
@@ -70,7 +69,6 @@ public class GeminiClient {
             return parts.get(0).get("text").toString();
 
         } catch (Exception e) {
-            // Enterprise firewall / no internet
             return null;
         }
     }
