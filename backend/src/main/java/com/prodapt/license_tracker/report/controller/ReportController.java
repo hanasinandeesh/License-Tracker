@@ -40,7 +40,6 @@ public class ReportController {
         this.auditLogService = auditLogService;
     }
 
-    // ================= LICENSE CSV =================
     @PreAuthorize("hasAnyRole('ADMIN','AUDITOR','ENGINEER')")
     @GetMapping("/licenses/csv")
     public void licenseUsageCsv(HttpServletResponse response) throws IOException {
@@ -52,7 +51,6 @@ public class ReportController {
         writer.flush();
     }
 
-    // ================= NON-COMPLIANT DEVICES CSV =================
     @PreAuthorize("hasAnyRole('ADMIN','AUDITOR')")
     @GetMapping("/devices/non-compliant/csv")
     public void nonCompliantDevicesCsv(HttpServletResponse response) throws IOException {
@@ -62,7 +60,6 @@ public class ReportController {
         deviceReportService.generateNonCompliantDevicesCsv(response.getWriter());
     }
 
-    // ================= AUDIT REPORT CSV =================
     @PreAuthorize("hasAnyRole('ADMIN','AUDITOR')")
     @GetMapping("/audit/csv")
     public void auditCsv(HttpServletResponse response) throws IOException {
@@ -72,7 +69,6 @@ public class ReportController {
         auditReportService.generateAuditCsv(response.getWriter());
     }
 
-    // ================= AUDIT DATA (JSON) =================
     @PreAuthorize("hasAnyRole('ADMIN','AUDITOR')")
     @GetMapping("/audit/entity/{entityType}")
     public ResponseEntity<List<AuditLog>> getAuditLogsByEntity(
@@ -93,13 +89,11 @@ public class ReportController {
         );
     }
 
-    // ================= COMMON CSV HEADERS =================
     private void setCsvHeaders(HttpServletResponse response, String fileName) {
 
         response.setContentType("text/csv");
         response.setCharacterEncoding("UTF-8");
 
-        // 🔴 IMPORTANT FIX: Disable caching
         response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
         response.setHeader("Pragma", "no-cache");
         response.setHeader("Expires", "0");
