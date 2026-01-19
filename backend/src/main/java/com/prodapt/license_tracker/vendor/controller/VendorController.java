@@ -19,7 +19,6 @@ public class VendorController {
         this.vendorService = vendorService;
     }
 
-    // 1️⃣ Add vendor
     @PostMapping
     public ResponseEntity<Vendor> addVendor(@RequestBody Vendor vendor) {
         return new ResponseEntity<>(
@@ -27,13 +26,11 @@ public class VendorController {
                 HttpStatus.CREATED);
     }
 
-    // 2️⃣ Get all vendors
     @GetMapping
     public List<Vendor> getAllVendors() {
         return vendorService.getAllVendors();
     }
 
-    // 3️⃣ Get vendor by ID
     @GetMapping("/{id}")
     public Vendor getVendorById(@PathVariable Integer id) {
         return vendorService.getVendorById(id);
