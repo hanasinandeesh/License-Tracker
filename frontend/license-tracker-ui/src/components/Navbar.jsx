@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import { NavLink } from "react-router-dom";
 import { MENU_BY_ROLE } from "../config/menuConfig";
 import "../styles/navbar.css";
