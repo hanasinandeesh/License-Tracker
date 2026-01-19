@@ -18,14 +18,12 @@ public class ExpiryAlertController {
 		this.expiryAlertService = expiryAlertService;
 	}
 
-	// License expiry alerts
 	@GetMapping("/licenses")
 	public List<LicenseExpiryAlertResponse> getExpiringLicenses(@RequestParam(defaultValue = "30") int days) {
 
 		return expiryAlertService.getExpiringLicenses(days);
 	}
 
-	//  Device impact alerts
 	@GetMapping("/devices")
 	public List<DeviceExpiryAlertResponse> getImpactedDevices(@RequestParam(defaultValue = "30") int days) {
 
