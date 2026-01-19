@@ -10,7 +10,6 @@ export default function AiBot() {
   const [answer, setAnswer] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // ================= ASK AI =================
   const askAi = async () => {
     if (!question.trim()) return;
 
@@ -31,7 +30,6 @@ export default function AiBot() {
     }
   };
 
-  // ================= PROJECT-JOURNEY BASED QUESTIONS =================
   const suggestedQuestionsByRole = {
     ADMIN: [
       // Dashboard & Overall Governance
