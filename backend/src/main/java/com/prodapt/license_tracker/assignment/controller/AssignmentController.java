@@ -22,7 +22,6 @@ public class AssignmentController {
         this.assignmentService = assignmentService;
     }
 
-    // Assign license to device
     @PreAuthorize("hasAnyRole('ADMIN','ENGINEER')")
     @PostMapping
     public ResponseEntity<Assignment> assignLicenseToDevice(
@@ -36,14 +35,12 @@ public class AssignmentController {
         return ResponseEntity.status(HttpStatus.CREATED).body(assignment);
     }
 
-    // Assignment table view (UI + Reports)
     @PreAuthorize("hasAnyRole('ADMIN','ENGINEER')")
     @GetMapping
     public List<AssignmentViewDTO> getAssignments() {
         return assignmentService.getAssignments();
     }
 
-    // Get assignments by device (used by Device pages)
     @PreAuthorize("hasAnyRole('ADMIN','ENGINEER','AUDITOR')")
     @GetMapping("/device/{deviceId}")
     public List<Assignment> getAssignmentsByDevice(
@@ -52,7 +49,6 @@ public class AssignmentController {
         return assignmentService.getAssignmentsByDevice(deviceId);
     }
 
-    // Get assignments by license (used by License pages)
     @PreAuthorize("hasAnyRole('ADMIN','ENGINEER','AUDITOR')")
     @GetMapping("/licenses/{licenseKey}")
     public ResponseEntity<List<Assignment>> getAssignmentsByLicense(
@@ -62,7 +58,6 @@ public class AssignmentController {
                 assignmentService.getAssignmentsByLicense(licenseKey));
     }
 
-    // License usage (Alerts / Reports)
     @PreAuthorize("hasAnyRole('ADMIN','AUDITOR')")
     @GetMapping("/licenses/{licenseKey}/usage")
     public ResponseEntity<Long> getLicenseUsage(
@@ -72,7 +67,6 @@ public class AssignmentController {
                 assignmentService.getLicenseUsage(licenseKey));
     }
 
-    // Remove all assignments for a device
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/devices/{deviceId}")
     public ResponseEntity<Void> removeAssignmentsByDevice(
@@ -81,9 +75,7 @@ public class AssignmentController {
         assignmentService.removeAssignmentsByDevice(deviceId);
         return ResponseEntity.noContent().build();
     }
-    
-    
-    // Revoke assignment by assignmentId
+        
     @PreAuthorize("hasAnyRole('ADMIN','ENGINEER')")
     @DeleteMapping("/{assignmentId}")
     public ResponseEntity<Void> revokeAssignment(@PathVariable Integer assignmentId) {
